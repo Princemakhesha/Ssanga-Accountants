@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found - SSangaaccountants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #023047;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #023047;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 5px;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        header {
+            background-color: #023047;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        h2 {
+            color: #023047;
+            font-size: 5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .ceo-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .ceo-image {
+            flex: 1 1 250px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ceo-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ceo-bio {
+            flex: 2 1 400px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .ceo-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ceo-bio {
+                padding-top: 20px;
+            }
+
+            h2,
+            p {
+                text-align: center;
+            }
+        }
+
+        footer {
+            background: #023047;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.9em;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            color: #219ebc;
+            margin: 0 10px;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+        .semtex {
+            color: #219ebc;
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .center {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <nav>
+        <div class="nav-brand">SSanga Accountants</div>
+        <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#benefits">Why Us</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+    <!-- About Content -->
+   <section id="about" style="background: white; padding: 60px 20px;">
+        <div class="about-container"
+            style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+
+            <!-- Text on the Left -->
+            <div class="about-text" style="flex: 2 1 400px; min-width: 280px; color: #333; text-align: left;">
+                <h2 style="color: #023047; margin-bottom: 20px; margin-left: 0; padding-left: 0; text-align: left;">
+                    Page not found
+                </h2>
+                <p style="margin-bottom: 20px; line-height: 1.6;">
+                    Looks like you got lost in the paperworks again, let us help you get back to the right place.
+                </p>
+
+                <a href="index.html" class="button" style="
+        background-color: #023047;
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s, color 0.3s;
+        display: inline-block;
+      " onmouseover="this.style.backgroundColor='white'; this.style.color='#023047';"
+                    onmouseout="this.style.backgroundColor='#023047'; this.style.color='white';">
+                    Go Back
+                </a>
+            </div>
+
+            <!-- Image on the Right -->
+            <div class="about-image" style="flex: 1 1 300px; min-width: 280px;">
+                <img src="img/notfound.jpg" alt="Illustration representing SSanga Accountants"
+                    style="width: 100%; height: auto;" />
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('show');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
