@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About Us - SSanga Accountants</title>
@@ -156,9 +156,13 @@
         footer {
             background: #023047;
             color: white;
-            text-align: center;
             padding: 20px 10px;
             font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         footer .social-icons {
@@ -171,7 +175,8 @@
             font-size: 1.3em;
             text-decoration: none;
         }
-                .semtex {
+
+        .semtex {
             color: #219ebc;
             text-decoration: none;
         }
@@ -180,7 +185,7 @@
             scroll-behavior: smooth;
         }
 
-        .center{
+        .center {
             position: relative;
         }
     </style>
@@ -251,7 +256,8 @@
             <div class="ceo-bio">
                 <h2>Meet Our CEO</h2>
                 <p>
-                    <strong>Dr. Masanga Hamza (MUFI-SAAB) Owenjovu</strong>, the founder and Chief Executive Officer of SSanga Accountants, brings
+                    <strong>Dr. Masanga Hamza (MUFI-SAAB) Owenjovu</strong>, the founder and Chief Executive Officer of
+                    SSanga Accountants, brings
                     over 15 years of industry experience. With a deep understanding of the local regulatory environment
                     and a passion for supporting entrepreneurship, Samuel has led the firm to become a reliable partner
                     to clients across the country.
@@ -264,9 +270,8 @@
             </div>
         </div>
     </section>
-
-    <footer class="center">
-        <p>&copy; 2025 SSanga Accountants. All rights reserved. Designed by <a class="semtex"
+    <footer>
+        <p>&copy; 2025 SSanga Accountants. All rights reserved. Powered by <a class="semtex"
                 href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency</a></p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -275,15 +280,16 @@
         </div>
     </footer>
 
+
     <script>
-  // Close mobile nav when a link is clicked
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.remove('show');
-    });
-  });
-</script>
-    
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('show');
+            });
+        });
+    </script>
+
 
 </body>
 
