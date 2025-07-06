@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SSanga Accountants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: #333;
+        }
+
+        nav {
+            background-color: #023047;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #023047;
+                position: absolute;
+                /* top: 60px; */
+                right: 20px;
+                width: 200px;
+                border-radius: 5px;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        .parallax {
+            background-image: url('/img/ssangabg.jpg');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .parallax h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax a.button {
+            background-color: #023047;
+            color: white;
+            padding: 12px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .parallax a.button:hover {
+            background-color: white;
+            color: #023047;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        section h2 {
+            color: #023047;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Services */
+        .service-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            color: #023047;
+            cursor: pointer;
+        }
+
+        .service-box i {
+            margin-bottom: 10px;
+            color: #023047;
+            transition: color 0.3s ease;
+        }
+
+        .service-box:hover {
+            background-color: #023047;
+            color: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-box:hover i {
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #fff;
+            padding: 60px 20px 40px;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1 1 300px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 25px;
+            background: white;
+            color: #023047;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            word-break: break-word;
+        }
+
+        .contact-info:hover {
+            box-shadow: 0 8px 20px rgba(2, 48, 71, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            word-break: break-word;
+        }
+
+        .contact-item i {
+            font-size: 1.5em;
+            color: #023047;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info:hover .contact-item i {
+            color: #023047;
+        }
+
+        .contact-form {
+            flex: 1 1 400px;
+            max-width: 500px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            grid-column: span 2;
+        }
+
+        .contact-form button {
+            background-color: #023047;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+            grid-column: span 2;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background: white;
+            color: #023047;
+            border: 1px solid #023047;
+        }
+
+        footer {
+            background: #023047;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.9em;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            color: #219ebc;
+            margin: 0 10px;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                flex-direction: column;
+                padding: 0 15px;
+            }
+
+            .contact-info,
+            .contact-form {
+                max-width: 100%;
+                flex: none;
+            }
+        }
+
+        /* Why Choose Us Section */
+        #benefits {
+            padding: 60px 0 30px 0;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            cursor: default;
+            color: #023047;
+            background: white;
+        }
+
+        .benefit-item:hover {
+            box-shadow: 0 8px 20px rgba(2, 48, 71, 0.3);
+            transform: translateY(-8px);
+            border-color: #023047;
+        }
+
+        .benefit-icon {
+            font-size: 3em;
+            color: #023047;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .benefit-item:hover .benefit-icon {
+            color: #023047;
+        }
+
+        .benefit-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #023047;
+            margin-bottom: 10px;
+        }
+
+        .benefit-desc {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 30px 0 60px 0;
+            margin: 0;
+        }
+
+        #testimonials h2 {
+            color: #023047;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial strong {
+            color: #023047;
+            font-size: 1.1em;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(2, 48, 71, 0.3);
+        }
+
+        .testimonial::before {
+            content: "\f10d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.8em;
+            color: #023047;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .testimonial strong {
+            display: block;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1.2em;
+            color: #023047;
+        }
+
+        .semtex {
+            color: #219ebc;
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-brand">SSanga Accountants</div>
+        <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#benefits">Why Us</a>
+            <a href="#testimonials">Testimonials</a>
+            <a class="" href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="parallax" id="">
+        <h1>Your Compliance. Our Priority.</h1>
+        <a href="#contact" class="button">Contact Us</a>
+    </div>
+
+    <section id="about" style="background: white; padding: 60px 20px;">
+  <div class="about-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+    
+    <!-- Text on the Left -->
+    <div class="about-text" style="flex: 2 1 400px; min-width: 280px; color: #333; text-align: left;">
+      <h2 style="color: #023047; margin-bottom: 20px; margin-left: 0; padding-left: 0; text-align: left;">
+        About SSanga Accountants
+      </h2>
+      <p style="margin-bottom: 20px; line-height: 1.6;">
+        At <strong>SSanga Accountants</strong>, we believe that every business deserves expert financial guidance tailored to its unique goals.
+        Founded with a passion for accuracy and integrity, our firm is committed to helping you navigate the complexities of accounting and compliance with ease.
+      </p>
+      <p style="margin-bottom: 30px; line-height: 1.6;">
+        We partner with businesses of all sizes to deliver personalized strategies that fuel growth, ensure compliance, and create lasting financial stability.
+      </p>
+      <a href="about.html" class="button" style="
+        background-color: #023047;
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s, color 0.3s;
+        display: inline-block;
+      "
+      onmouseover="this.style.backgroundColor='white'; this.style.color='#023047';"
+      onmouseout="this.style.backgroundColor='#023047'; this.style.color='white';">
+        Learn More
+      </a>
+    </div>
+
+    <!-- Image on the Right -->
+    <div class="about-image" style="flex: 1 1 300px; min-width: 280px;">
+      <img src="img/sangaabout.jpg" alt="Illustration representing SSanga Accountants" style="width: 100%; height: auto;" />
+    </div>
+
+  </div>
+</section>
+
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div class="service-box">
+                <i class="fas fa-calculator fa-2x"></i>
+                <h3>Accounting</h3>
+                <p>Financial Statements, Management Accounts and Projections tailored to your business.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-file-invoice-dollar fa-2x"></i>
+                <h3>Tax Services</h3>
+                <p>VAT registration, Income Tax returns, audits and ongoing tax compliance.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-book fa-2x"></i>
+                <h3>Bookkeeping</h3>
+                <p>We capture every transaction from General Ledger to Trial Balance.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-users-cog fa-2x"></i>
+                <h3>Payroll</h3>
+                <p>We manage Pay Slips, Tax Returns, and HR Reconciliations.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-briefcase fa-2x"></i>
+                <h3>Company Secretary</h3>
+                <p>Compliance for CIPC, CIDB, HR, and Risk Documentation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <h2>Why Choose Us</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-check-circle benefit-icon"></i>
+                <h3 class="benefit-title">Reliable Service</h3>
+                <p class="benefit-desc">Trusted by clients for accurate and timely financial management.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-user-tie benefit-icon"></i>
+                <h3 class="benefit-title">Expert Team</h3>
+                <p class="benefit-desc">Professional accountants with years of industry experience.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-shield-alt benefit-icon"></i>
+                <h3 class="benefit-title">Data Security</h3>
+                <p class="benefit-desc">We prioritize confidentiality and secure handling of your information.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-headset benefit-icon"></i>
+                <h3 class="benefit-title">Customer Support</h3>
+                <p class="benefit-desc">Responsive and personalized client assistance whenever you need it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"SSanga Accountants helped streamline our financial processes and saved us valuable time."</p>
+                <strong>— John D.</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Professional, reliable, and always available to answer our questions."</p>
+                <strong>— Maria K.</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Their team made tax season a breeze for our small business."</p>
+                <strong>— Thabo M.</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Highly recommend SSanga for any accounting needs. They go above and beyond."</p>
+                <strong>— Naledi S.</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone"></i><span>+27 072 372 6448</span></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><span>ssanga@ssangaaccountants.co.za</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Finance Street, Johannesburg,
+                        South Africa</span></div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SSanga Accountants. All rights reserved. Designed by <a class="semtex"
+                href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector(".nav-toggle").addEventListener("click", () => {
+            document.querySelector(".nav-links").classList.toggle("show");
+        });
+    </script>
+
+</body>
+
+</html>
