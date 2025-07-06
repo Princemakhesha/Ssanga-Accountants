@@ -75,7 +75,19 @@
         }
 
         .parallax {
-
+            background-image: url('img/ssangabg.jpg');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            padding: 20px;
         }
 
         .parallax h1 {
@@ -417,7 +429,9 @@
 
     <nav>
         <div class="nav-brand">SSanga Accountants</div>
-        <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+        <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#about">About</a>
@@ -428,21 +442,7 @@
         </div>
     </nav>
 
-    <div class="parallax" id="" style="
-                background-image: url('/img/ssangabg.jpg');
-            height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            color: white;
-            padding: 20px;
-    ">
+    <div class="parallax" id="">
         <h1>Your Compliance. Our Priority.</h1>
         <a href="#contact" class="button">Contact Us</a>
     </div>
@@ -595,11 +595,11 @@
         </div>
     </footer>
 
-    <script>
+    <!-- <script>
         document.querySelector(".nav-toggle").addEventListener("click", () => {
             document.querySelector(".nav-links").classList.toggle("show");
         });
-    </script>
+    </script> -->
 
 </body>
 
