@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SSanga Accountants</title>
@@ -55,7 +56,8 @@
                 flex-direction: column;
                 background: #023047;
                 position: absolute;
-                /* top: 60px; */
+                top: 60px;
+                /* 👈 This ensures dropdown is below the nav bar */
                 right: 20px;
                 width: 200px;
                 border-radius: 5px;
@@ -74,6 +76,7 @@
             }
         }
 
+
         .parallax {
             background-image: url('img/ssangabg.jpg');
             height: 500px;
@@ -88,6 +91,13 @@
             text-align: center;
             color: white;
             padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+                /* 👈 Fixes iOS zoom bug */
+            }
         }
 
         .parallax h1 {
@@ -421,7 +431,6 @@
         html {
             scroll-behavior: smooth;
         }
-
     </style>
 </head>
 
@@ -448,21 +457,25 @@
     </div>
 
     <section id="about" style="background: white; padding: 60px 20px;">
-  <div class="about-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
-    
-    <!-- Text on the Left -->
-    <div class="about-text" style="flex: 2 1 400px; min-width: 280px; color: #333; text-align: left;">
-      <h2 style="color: #023047; margin-bottom: 20px; margin-left: 0; padding-left: 0; text-align: left;">
-        About SSanga Accountants
-      </h2>
-      <p style="margin-bottom: 20px; line-height: 1.6;">
-        At <strong>SSanga Accountants</strong>, we believe that every business deserves expert financial guidance tailored to its unique goals.
-        Founded with a passion for accuracy and integrity, our firm is committed to helping you navigate the complexities of accounting and compliance with ease.
-      </p>
-      <p style="margin-bottom: 30px; line-height: 1.6;">
-        We partner with businesses of all sizes to deliver personalized strategies that fuel growth, ensure compliance, and create lasting financial stability.
-      </p>
-      <a href="About.html" class="button" style="
+        <div class="about-container"
+            style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+
+            <!-- Text on the Left -->
+            <div class="about-text" style="flex: 2 1 400px; min-width: 280px; color: #333; text-align: left;">
+                <h2 style="color: #023047; margin-bottom: 20px; margin-left: 0; padding-left: 0; text-align: left;">
+                    About SSanga Accountants
+                </h2>
+                <p style="margin-bottom: 20px; line-height: 1.6;">
+                    At <strong>SSanga Accountants</strong>, we believe that every business deserves expert financial
+                    guidance tailored to its unique goals.
+                    Founded with a passion for accuracy and integrity, our firm is committed to helping you navigate the
+                    complexities of accounting and compliance with ease.
+                </p>
+                <p style="margin-bottom: 30px; line-height: 1.6;">
+                    We partner with businesses of all sizes to deliver personalized strategies that fuel growth, ensure
+                    compliance, and create lasting financial stability.
+                </p>
+                <a href="About.html" class="button" style="
         background-color: #023047;
         color: white;
         padding: 12px 30px;
@@ -472,20 +485,20 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         transition: background 0.3s, color 0.3s;
         display: inline-block;
-      "
-      onmouseover="this.style.backgroundColor='white'; this.style.color='#023047';"
-      onmouseout="this.style.backgroundColor='#023047'; this.style.color='white';">
-        Learn More
-      </a>
-    </div>
+      " onmouseover="this.style.backgroundColor='white'; this.style.color='#023047';"
+                    onmouseout="this.style.backgroundColor='#023047'; this.style.color='white';">
+                    Learn More
+                </a>
+            </div>
 
-    <!-- Image on the Right -->
-    <div class="about-image" style="flex: 1 1 300px; min-width: 280px;">
-      <img src="img/sangaabout.jpg" alt="Illustration representing SSanga Accountants" style="width: 100%; height: auto;" />
-    </div>
+            <!-- Image on the Right -->
+            <div class="about-image" style="flex: 1 1 300px; min-width: 280px;">
+                <img src="img/sangaabout.jpg" alt="Illustration representing SSanga Accountants"
+                    style="width: 100%; height: auto;" />
+            </div>
 
-  </div>
-</section>
+        </div>
+    </section>
 
 
     <section id="services">
@@ -572,7 +585,8 @@
         <div class="contact-wrapper">
             <div class="contact-info">
                 <div class="contact-item"><i class="fas fa-phone"></i><span>+27 072 372 6448</span></div>
-                <div class="contact-item"><i class="fas fa-envelope"></i><span>ssanga@ssangaaccountants.co.za</span></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><span>ssanga@ssangaaccountants.co.za</span>
+                </div>
                 <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Finance Street, Johannesburg,
                         South Africa</span></div>
             </div>
