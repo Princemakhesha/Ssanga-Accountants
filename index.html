@@ -22,6 +22,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            /* Vertical center nav content */
             padding: 10px 20px;
             position: sticky;
             top: 0;
@@ -36,12 +37,23 @@
         .nav-links {
             display: flex;
             gap: 20px;
+            align-items: center;
+            /* Vertically center all links */
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
+            padding: 8px 12px;
+            /* horizontal padding only */
+            line-height: normal;
+            /* reset line height */
+            display: flex;
+            align-items: center;
+            height: 40px;
+            /* consistent height */
+            box-sizing: border-box;
         }
 
         .nav-toggle {
@@ -64,7 +76,17 @@
             }
 
             .nav-links a {
-                padding: 10px;
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                padding: 8px 15px;
+                /* same horizontal and vertical padding */
+                display: flex;
+                align-items: center;
+                /* vertically center text inside */
+                height: 40px;
+                /* fixed height for all */
+                box-sizing: border-box;
             }
 
             .nav-links.show {
@@ -431,6 +453,30 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Contact button on large screens */
+        @media (min-width: 769px) {
+            .contact-button {
+                border: 2px solid white;
+                border-radius: 999px;
+                font-weight: 600;
+                padding: 8px 20px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                background: transparent;
+                color: white;
+                transition: background 0.3s ease, color 0.3s ease;
+            }
+
+            /* Hover effect */
+            .contact-button:hover {
+                background: white;
+                color: #023047;
+            }
+        }
     </style>
 </head>
 
@@ -447,7 +493,7 @@
             <a href="#services">Services</a>
             <a href="#benefits">Why Us</a>
             <a href="#testimonials">Testimonials</a>
-            <a class="" href="#contact">Contact Us</a>
+            <a href="#contact" class="contact-button">Contact Us</a>
         </div>
     </nav>
 
@@ -614,6 +660,15 @@
             document.querySelector(".nav-links").classList.toggle("show");
         });
     </script> -->
+
+    <script>
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('show');
+            });
+        });
+    </script>
 
 </body>
 
