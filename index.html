@@ -1173,7 +1173,8 @@
         <div class="nav-brand"><img src="img/SSANGA_LOGO FOR FOOTER.png" width="150"></div>
         <p>&copy; 2025 SSanga Accountants. All rights reserved.<br>A licensed Controlling Company of the Designated
             Mother Group.<br>Registration number
-            2013/073718/07. Tax Numbers IT-9431277178 <br>Entities in the group are Licensed.<br>Powered by <a
+            2013/073718/07. Tax Numbers IT-9431277178 <br>Entities in the group are Licensed. <a href="https://ssangaaccountants.co.za/privacy"
+                    style="color: white; text-decoration: underline;">Privacy Policy</a><br>Powered by <a
                 class="semtex" href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency.</a></p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1262,18 +1263,30 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (!localStorage.getItem("cookiesAccepted")) {
-                document.getElementById("cookie-notice").style.display = "block";
-            }
+<script>
+  function setCookieNoticeTime() {
+    const expireTime = new Date().getTime() + 60 * 60 * 1000; // 1 hour from now
+    localStorage.setItem("cookiesAcceptedUntil", expireTime);
+  }
 
-            document.getElementById("accept-cookies").addEventListener("click", function () {
-                localStorage.setItem("cookiesAccepted", "true");
-                document.getElementById("cookie-notice").style.display = "none";
-            });
-        });
-    </script>
+  function shouldShowCookieNotice() {
+    const now = new Date().getTime();
+    const acceptedUntil = localStorage.getItem("cookiesAcceptedUntil");
+    return !acceptedUntil || now > parseInt(acceptedUntil);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (shouldShowCookieNotice()) {
+      document.getElementById("cookie-notice").style.display = "block";
+    }
+
+    document.getElementById("accept-cookies").addEventListener("click", function () {
+      setCookieNoticeTime();
+      document.getElementById("cookie-notice").style.display = "none";
+    });
+  });
+</script>
+
 
 
 </body>
