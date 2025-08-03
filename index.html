@@ -17,7 +17,7 @@
         }
 
         nav {
-            background-color: #023047;
+            background-color: #1b5e20;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -66,7 +66,7 @@
             .nav-links {
                 display: none;
                 flex-direction: column;
-                background: #023047;
+                background: #1b5e20;
                 position: absolute;
                 top: 60px;
                 /* 👈 This ensures dropdown is below the nav bar */
@@ -123,13 +123,19 @@
         }
 
         .parallax h1 {
-            font-size: 3em;
+            font-size: 2.5em;
+            margin-bottom: -20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax h2 {
+            font-size: 1.5em;
             margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .parallax a.button {
-            background-color: #023047;
+            background-color: #1b5e20;
             color: white;
             padding: 12px 40px;
             text-decoration: none;
@@ -143,14 +149,114 @@
 
         .parallax a.button:hover {
             background-color: white;
-            color: #023047;
+            color: #1b5e20;
+        }
+
+        .parallax2 {
+            background-image: url('img/BG22.jpg');
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            gap: 20px;
+            /* Adds spacing between logo and text */
+        }
+
+        .parallax2 h1 {
+            font-size: 2.5em;
+            max-width: 90%;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax-logo {
+            width: 250px;
+            height: auto;
+        }
+
+        /* Make it responsive */
+        @media (max-width: 768px) {
+            .parallax2 {
+                background-attachment: scroll;
+                padding: 30px 15px;
+            }
+
+            .parallax2 h1 {
+                font-size: 1.5em;
+            }
+
+            .parallax-logo {
+                width: 150px;
+            }
+        }
+
+
+        .parallax3 {
+            background-image: url('img/bg223.jpg');
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            gap: 20px;
+            /* Adds spacing between logo and text */
+        }
+
+        @media (max-width: 768px) {
+            .parallax3 {
+                background-attachment: scroll;
+                /* 👈 Fixes iOS zoom bug */
+                padding: 30px 15px;
+            }
+        }
+
+        .parallax3 h1 {
+            font-size: 1.5em;
+        }
+
+        .parallax3 h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax3 a.button {
+            background-color: #1b5e20;
+            color: white;
+            padding: 12px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .parallax3 a.button:hover {
+            background-color: white;
+            color: #1b5e20;
         }
 
         section {
             background: white;
             margin: 30px 0;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
             padding: 30px;
         }
 
@@ -170,18 +276,18 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            color: #023047;
+            color: #1b5e20;
             cursor: pointer;
         }
 
         .service-box i {
             margin-bottom: 10px;
-            color: #023047;
+            color: #1b5e20;
             transition: color 0.3s ease;
         }
 
         .service-box:hover {
-            background-color: #023047;
+            background-color: #1b5e20;
             color: white;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             transform: translateY(-5px);
@@ -212,7 +318,7 @@
             border-radius: 15px;
             padding: 25px;
             background: white;
-            color: #023047;
+            color: #1b5e20;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
             word-break: break-word;
         }
@@ -233,12 +339,12 @@
 
         .contact-item i {
             font-size: 1.5em;
-            color: #023047;
+            color: #1b5e20;
             transition: color 0.3s ease;
         }
 
         .contact-info:hover .contact-item i {
-            color: #023047;
+            color: #1b5e20;
         }
 
         .contact-form {
@@ -263,7 +369,7 @@
         }
 
         .contact-form button {
-            background-color: #023047;
+            background-color: #1b5e20;
             color: white;
             padding: 12px 25px;
             border: none;
@@ -278,13 +384,18 @@
 
         .contact-form button:hover {
             background: white;
-            color: #023047;
-            border: 1px solid #023047;
+            color: #1b5e20;
+            border: 1px solid #1b5e20;
         }
 
         footer {
-            background: #023047;
-            color: white;
+            background: linear-gradient(135deg,
+                    #f9f295 0%,
+                    #f1c40f 20%,
+                    #d4af37 50%,
+                    #b8860b 75%,
+                    #8b7500 100%);
+            color: black;
             text-align: center;
             padding: 20px 10px;
             font-size: 0.9em;
@@ -295,7 +406,7 @@
         }
 
         footer .social-icons a {
-            color: #219ebc;
+            color: black;
             margin: 0 10px;
             font-size: 1.3em;
             text-decoration: none;
@@ -336,31 +447,31 @@
             text-align: center;
             transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
             cursor: default;
-            color: #023047;
+            color: #1b5e20;
             background: white;
         }
 
         .benefit-item:hover {
             box-shadow: 0 8px 20px rgba(2, 48, 71, 0.3);
             transform: translateY(-8px);
-            border-color: #023047;
+            border-color: #1b5e20;
         }
 
         .benefit-icon {
             font-size: 3em;
-            color: #023047;
+            color: #1b5e20;
             margin-bottom: 15px;
             transition: color 0.3s ease;
         }
 
         .benefit-item:hover .benefit-icon {
-            color: #023047;
+            color: #1b5e20;
         }
 
         .benefit-title {
             font-size: 1.5em;
             font-weight: 600;
-            color: #023047;
+            color: #1b5e20;
             margin-bottom: 10px;
         }
 
@@ -377,7 +488,7 @@
         }
 
         #testimonials h2 {
-            color: #023047;
+            color: #1b5e20;
             font-size: 2.5em;
             text-align: center;
             margin-bottom: 40px;
@@ -432,7 +543,7 @@
             top: 20px;
             left: 20px;
             font-size: 2.8em;
-            color: #023047;
+            color: #1b5e20;
             opacity: 0.15;
             pointer-events: none;
         }
@@ -442,11 +553,11 @@
             font-weight: 700;
             font-style: normal;
             font-size: 1.2em;
-            color: #023047;
+            color: #1b5e20;
         }
 
         .semtex {
-            color: #219ebc;
+            color: white;
             text-decoration: none;
         }
 
@@ -474,8 +585,67 @@
             /* Hover effect */
             .contact-button:hover {
                 background: white;
-                color: #023047;
+                color: #1b5e20;
             }
+        }
+
+        .slim-nav-brand {
+            height: 2px;
+            /* Adjust this value to make the nav bar slimmer or thicker */
+            line-height: 18px;
+            /* Ensures the content inside the nav bar is vertically centered */
+
+            background: linear-gradient(135deg,
+                    #f9f295 0%,
+                    #f1c40f 20%,
+                    #d4af37 50%,
+                    #b8860b 75%,
+                    #8b7500 100%);
+
+        }
+
+        /* Preloader container */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* White background with transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            top: 13px;
+        }
+
+        /* Logo animation */
+        @keyframes pulseZoom {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Apply pulse & zoom effect */
+        #preloader img {
+            width: 150px;
+            height: auto;
+            animation: pulseZoom 2s ease-in-out infinite;
+        }
+
+        /* Hide the preloader after the content is loaded */
+        body.loaded #preloader {
+            display: none;
         }
     </style>
 
@@ -489,15 +659,34 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="img/favicon.png" alt="Loading...">
+    </div>
+
+    <script>
+        // Add a dynamic timeout for hiding the preloader
+        window.addEventListener("load", function () {
+            const minLoadTime = 3000; // Minimum load time in milliseconds
+            setTimeout(function () {
+                document.body.classList.add('loaded');
+            }, minLoadTime); // Always wait at least 2 seconds
+        });
+    </script>
+
+
+    <nav class="slim-nav-brand">
+    </nav>
+
 
     <nav>
-        <div class="nav-brand">SSanga Accountants</div>
+        <div class="nav-brand"><img src="img/SSANGA_LOGO.png" width="150"></div>
         <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
             <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links">
             <a href="https://ssangaaccountants.co.za">Home</a>
-            <a href="https://ssangaaccountants.co.za//#About">About</a>
+            <a href="https://ssangaaccountants.co.za/#About">About</a>
             <a href="https://ssangaaccountants.co.za/#services">Services</a>
             <a href="https://ssangaaccountants.co.za/#benefits">Why Us</a>
             <a href="https://ssangaaccountants.co.za/#testimonials">Testimonials</a>
@@ -506,7 +695,8 @@
     </nav>
 
     <div class="parallax" id="">
-        <h1>Your Compliance. Our Priority.</h1>
+        <h1>WELCOME TO SSANGA ACCOUNTANTS</h1>
+        <h2>Your Compliance. Our Priority.</h2>
         <a href="#contact" class="button">Contact Us</a>
     </div>
 
@@ -514,15 +704,15 @@
         <div class="about-container"
             style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
 
-                        <!-- Image on the Right -->
+            <!-- Image on the Right -->
             <div class="about-image" style="flex: 1 1 300px; min-width: 280px;">
-                <img src="img/sangaabout.jpg" alt="Illustration representing SSanga Accountants"
+                <img src="img/sangaabout.png" alt="Illustration representing SSanga Accountants"
                     style="width: 100%; height: auto;" />
             </div>
 
             <!-- Text on the Left -->
             <div class="about-text" style="flex: 2 1 400px; min-width: 280px; color: #333; text-align: left;">
-                <h2 style="color: #023047; margin-bottom: 20px; margin-left: 0; padding-left: 0; text-align: left;">
+                <h2 style="color: #1b5e20; margin-bottom: 20px; margin-left: 0; padding-left: 0; text-align: left;">
                     About SSanga Accountants
                 </h2>
                 <p style="margin-bottom: 20px; line-height: 1.6;">
@@ -536,7 +726,7 @@
                     compliance, and create lasting financial stability.
                 </p>
                 <a href="https://ssangaaccountants.co.za/About" class="button" style="
-        background-color: #023047;
+        background-color: #1b5e20;
         color: white;
         padding: 12px 30px;
         text-decoration: none;
@@ -545,8 +735,8 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         transition: background 0.3s, color 0.3s;
         display: inline-block;
-      " onmouseover="this.style.backgroundColor='white'; this.style.color='#023047';"
-                    onmouseout="this.style.backgroundColor='#023047'; this.style.color='white';">
+      " onmouseover="this.style.backgroundColor='white'; this.style.color='#1b5e20';"
+                    onmouseout="this.style.backgroundColor='#1b5e20'; this.style.color='white';">
                     Learn More
                 </a>
             </div>
@@ -556,40 +746,15 @@
         </div>
     </section>
 
+    <div class="parallax3" id="">
+        <img src="img/favicon.png" class="parallax-logo" alt="Logo">
+        <h1>Accounting Services Providers and other compliancy items that offer a broad spectrum of
+            financial solutions to retail and corporate customers across key markets. </h1>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div class="service-box">
-                <i class="fas fa-calculator fa-2x"></i>
-                <h3>Accounting</h3>
-                <p>Financial Statements, Management Accounts and Projections tailored to your business.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-file-invoice-dollar fa-2x"></i>
-                <h3>Tax Services</h3>
-                <p>VAT registration, Income Tax returns, audits and ongoing tax compliance.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-book fa-2x"></i>
-                <h3>Bookkeeping</h3>
-                <p>We capture every transaction from General Ledger to Trial Balance.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-users-cog fa-2x"></i>
-                <h3>Payroll</h3>
-                <p>We manage Pay Slips, Tax Returns, and HR Reconciliations.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-briefcase fa-2x"></i>
-                <h3>Company Secretary</h3>
-                <p>Compliance for CIPC, CIDB, HR, and Risk Documentation.</p>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <section id="benefits">
-        <h2>Why Choose Us</h2>
+        <h2 style="color: #1b5e20;">Why Choose Us</h2>
         <div class="benefits-grid">
             <div class="benefit-item">
                 <i class="fas fa-check-circle benefit-icon"></i>
@@ -614,8 +779,256 @@
         </div>
     </section>
 
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <h2 style="color: #1b5e20;">Our Services</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div class="service-box">
+                <i class="fas fa-calculator fa-2x"></i>
+                <h3>Accounting</h3>
+                <p>Financial Statements, Management Accounts and Projections tailored to your business.</p>
+                <button onclick="openModal('accountingModal')">Learn More</button>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-file-invoice-dollar fa-2x"></i>
+                <h3>Tax Services</h3>
+                <p>VAT registration, Income Tax returns, audits and ongoing tax compliance.</p>
+                <button onclick="openModal('taxModal')">Learn More</button>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-book fa-2x"></i>
+                <h3>Bookkeeping</h3>
+                <p>We capture every transaction from General Ledger to Trial Balance.</p>
+                <button onclick="openModal('bookkeepingModal')">Learn More</button>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-users-cog fa-2x"></i>
+                <h3>Payroll</h3>
+                <p>We manage Pay Slips, Tax Returns, and HR Reconciliations.</p>
+                <button onclick="openModal('payrollModal')">Learn More</button>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-briefcase fa-2x"></i>
+                <h3>Company Secretary</h3>
+                <p>Compliance for CIPC, CIDB, HR, and Risk Documentation.</p>
+                <button onclick="openModal('secretaryModal')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS WITH IMAGES -->
+    <div id="accountingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('accountingModal')">&times;</span>
+            <img src="img/balancesheet.jpg" alt="Accounting" class="modal-img">
+            <h2 style="color: #1b5e20;">Accounting Services</h2>
+            <p>Our accounting division covers all accounting functions required in running an effective business. Our
+                services include the following:</p>
+            <ul>
+                <li>Financial Statements.</li>
+                <li>Preparation of management accounts – monthly, quarterly as well as annual.</li>
+                <li>Projections , etc.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="taxModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('taxModal')">&times;</span>
+            <img src="img/close-up-female-hand-counting-with-calculator.jpg" alt="Tax Services" class="modal-img">
+            <h3 style="color: #1b5e20;">Tax Services</h3>
+            <p>We offer comprehensive tax services to our clients to ensure compliance with all South African Revenue
+                Services requirements. Our tax services include the following:</p>
+            <ul>
+                <li>Tax planning and advisory.</li>
+                <li>Preparation and submission of VAT returns.</li>
+                <li>Preparation and submission of provisional tax returns.</li>
+                <li>Preparation and submission of income tax returns (individuals and companies).</li>
+                <li>Preparation and submission of PAYE returns and reconciliation.</li>
+                <li>Registrations (all tax types) and clearance.</li>
+                <li>All other tax preparations, submissions and query resolution.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="bookkeepingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bookkeepingModal')">&times;</span>
+            <img src="img/BOOKEEPING.jpg
+            " alt="Bookkeeping" class="modal-img">
+            <h3 style="color: #1b5e20;">Bookkeeping</h3>
+            <p>We keep your books tidy and compliant, ensuring every transaction is tracked from source to statement.
+            </p>
+            <ul>
+                <li>Capturing of transactions - General Ledger.</li>
+                <li>Capturing of transactions - Cash & Bank.</li>
+                <li>Capturing of transactions - Trial Balance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="payrollModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('payrollModal')">&times;</span>
+            <img src="img/PAYROL.jpg" alt="Payroll" class="modal-img">
+            <h3 style="color: #1b5e20;">Payroll</h3>
+            <p>Let us take care of your staff pay, tax compliance, and HR filings—accurately and on time.</p>
+            <ul>
+                <li>Payroll preparation & processing and payslips.</li>
+                <li>Preparation and submission of all statutory returns – SARS and UIF.</li>
+                <li>Preparation and submission of statutory reconciliations (IRP5’s) – SARS.</li>
+                <li>Payroll Reconciliations.</li>
+                <li>Payroll / Employee benefit department set-up.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="secretaryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('secretaryModal')">&times;</span>
+            <img src="img/Company_Secretariat.jpg" alt="Company Secretary" class="modal-img">
+            <h3 style="color: #1b5e20;">Company Secretary</h3>
+            <p>Our company secretariat division offers various services to ensure compliance with the companies act as
+                well as ensuring that our clients are properly organized. These services include:</p>
+            <ul>
+                <li>Internal Audit & Risk Management.</li>
+                <li>Sectional Title Management.</li>
+                <li>Home Owners Title Management.</li>
+                <li>CIPC issues (all).</li>
+                <li>Human Resource.</li>
+                <li>Filing & Documentation.</li>
+                <li>Supervision - Reporting & Updating.</li>
+                <li>CIDB issues (all), etc.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- STYLES -->
+    <style>
+        .service-box {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+
+        .service-box button {
+            margin-top: 10px;
+            background-color: #1b5e20;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .service-box button:hover {
+            background-color: white;
+            color: #1b5e20;
+            border: 1px solid #1b5e20;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #1b5e20;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            background-color: #2e7d32;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .close {
+                width: 28px;
+                height: 28px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        .modal-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+    </style>
+
+
+    <!-- SCRIPT -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+
+
+
     <section id="testimonials">
-        <h2>What Our Clients Say</h2>
+        <h2 style="color: #1b5e20;">What Our Clients Say</h2>
         <div class="testimonial-grid">
             <div class="testimonial">
                 <p>"SSanga Accountants helped streamline our financial processes and saved us valuable time."</p>
@@ -635,19 +1048,25 @@
             </div>
         </div>
     </section>
-
+    <div class="parallax2" id="">
+        <img src="img/favicon.png" class="parallax-logo" alt="Logo">
+        <h1><strong style="color: #1b5e20;">Ssanga</strong> <strong style="color: #827717;">Accountants</strong> are
+            here to assist you navigate through compliancy and
+            saving you from avoidable fines and penalties.
+        </h1>
+    </div>
     <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
+        <h2 style="color: #1b5e20;">Contact Us</h2>
         <div class="contact-wrapper">
             <div class="contact-info">
                 <div class="contact-item"><i class="fas fa-phone"></i><span>+27 072 372 6448</span></div>
-                <div class="contact-item"><i class="fas fa-envelope"></i><span>ssanga@ssangaaccountants.co.za</span>
+                <div class="contact-item"><i class="fas fa-envelope"></i><span>info@ssangaaccountants.co.za</span>
                 </div>
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Finance Street, Johannesburg,
-                        South Africa</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Farm No.2, Plot 1 Mashampulane.
+                        North West, South Africa, 0499.</span></div>
             </div>
             <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="b44ada9b-80f3-4cb4-8489-ce825cca4547">
+                <input type="hidden" name="access_key" value="2d7dcaad-8cbf-4a87-9211-1f7c6abf9259">
                 <input type="hidden" name="subject"
                     value="A client is trying to get in touch from your website - Ssangaaccountants.co.za">
                 <input type="hidden" name="redirect" value="https://ssangaaccountants.co.za/thanks">
@@ -660,9 +1079,88 @@
         </div>
     </section>
 
+    <!-- PROFESSIONAL AFFILIATIONS SECTION -->
+    <div id="affiliations" style="padding: 40px 0; background-color: #1b5e20;">
+        <h1 style="text-align: center; color: #fff; margin-bottom: 30px;">Professional Affiliations</h1>
+        <div class="affiliations-carousel-wrapper">
+            <div class="affiliations-carousel">
+                <!-- Repeat this block for each image/logo -->
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <!-- Repeat logos to ensure seamless infinite scroll -->
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <!-- Repeat logos to ensure seamless infinite scroll -->
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+                <img src="img/Affiliations/ppra_logo.png" alt="Affiliation 1" class="affiliation-logo">
+                <img src="img/Affiliations/sars-logo-removebg-preview.png" alt="Affiliation 2" class="affiliation-logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- STYLES -->
+    <style>
+        .affiliations-carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .affiliations-carousel {
+            display: flex;
+            width: fit-content;
+            animation: scrollLeft 30s linear infinite;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .affiliation-logo {
+            height: 80px;
+            margin: 0 20px;
+            background-color: transparent;
+            transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+
+        .affiliation-logo:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .affiliation-logo {
+                height: 60px;
+                margin: 0 15px;
+            }
+        }
+    </style>
+
+
+
     <footer>
-        <p>&copy; 2025 SSanga Accountants. All rights reserved. Powered by <a class="semtex"
-                href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency</a></p>
+        <div class="nav-brand"><img src="img/SSANGA_LOGO FOR FOOTER.png" width="150"></div>
+        <p>&copy; 2025 SSanga Accountants. All rights reserved.<br>A licensed Controlling Company of the Designated
+            Mother Group.<br>Registration number
+            2013/073718/07. Tax Numbers IT-9431277178 <br>Entities in the group are Licensed.<br>Powered by <a
+                class="semtex" href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency.</a></p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>

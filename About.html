@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Us - SSanga Accountants</title>
+    <title>About Us | SSanga Accountants</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         body {
@@ -16,41 +16,46 @@
             color: #333;
             line-height: 1.6;
         }
-                .nav-brand {
+
+        nav {
+            background-color: #1b5e20;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertical center nav content */
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-brand {
             font-size: 1.5em;
             font-weight: bold;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            /* Vertically center all links */
+        }
 
-        nav {
-            background-color: #023047;
+        .nav-links a {
             color: white;
-   display: flex;
-  justify-content: space-between;
-  align-items: center; /* Vertical center nav content */
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center; /* Vertically center all links */
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 12px;  /* horizontal padding only */
-  line-height: normal; /* reset line height */
-  display: flex;
-  align-items: center;
-  height: 40px;       /* consistent height */
-  box-sizing: border-box;
-}
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            /* horizontal padding only */
+            line-height: normal;
+            /* reset line height */
+            display: flex;
+            align-items: center;
+            height: 40px;
+            /* consistent height */
+            box-sizing: border-box;
+        }
 
         .nav-toggle {
             display: none;
@@ -62,16 +67,27 @@
             .nav-links {
                 display: none;
                 flex-direction: column;
-                background: #023047;
+                background: #1b5e20;
                 position: absolute;
                 top: 60px;
+                /* 👈 This ensures dropdown is below the nav bar */
                 right: 20px;
                 width: 200px;
                 border-radius: 5px;
             }
 
             .nav-links a {
-                padding: 10px;
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                padding: 8px 15px;
+                /* same horizontal and vertical padding */
+                display: flex;
+                align-items: center;
+                /* vertically center text inside */
+                height: 40px;
+                /* fixed height for all */
+                box-sizing: border-box;
             }
 
             .nav-links.show {
@@ -161,15 +177,16 @@
         }
 
         footer {
-            background: #023047;
-            color: white;
+            background: linear-gradient(135deg,
+                    #f9f295 0%,
+                    #f1c40f 20%,
+                    #d4af37 50%,
+                    #b8860b 75%,
+                    #8b7500 100%);
+            color: black;
+            text-align: center;
             padding: 20px 10px;
             font-size: 0.9em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
         }
 
         footer .social-icons {
@@ -177,14 +194,17 @@
         }
 
         footer .social-icons a {
-            color: #219ebc;
+            color: black;
             margin: 0 10px;
             font-size: 1.3em;
             text-decoration: none;
         }
+        .footer2 {
+            text-align: center;
+        }
 
         .semtex {
-            color: #219ebc;
+            color: white;
             text-decoration: none;
         }
 
@@ -196,7 +216,7 @@
             position: relative;
         }
 
-                /* Contact button on large screens */
+        /* Contact button on large screens */
         @media (min-width: 769px) {
             .contact-button {
                 border: 2px solid white;
@@ -216,23 +236,100 @@
             /* Hover effect */
             .contact-button:hover {
                 background: white;
-                color: #023047;
+                color: #1b5e20;
             }
+        }
+
+        .slim-nav-brand {
+            height: 2px;
+            /* Adjust this value to make the nav bar slimmer or thicker */
+            line-height: 18px;
+            /* Ensures the content inside the nav bar is vertically centered */
+
+            background: linear-gradient(135deg,
+                    #f9f295 0%,
+                    #f1c40f 20%,
+                    #d4af37 50%,
+                    #b8860b 75%,
+                    #8b7500 100%);
+
+        }
+
+        /* Preloader container */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* White background with transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            top: 13px;
+        }
+
+        /* Logo animation */
+        @keyframes pulseZoom {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Apply pulse & zoom effect */
+        #preloader img {
+            width: 150px;
+            height: auto;
+            animation: pulseZoom 2s ease-in-out infinite;
+        }
+
+        /* Hide the preloader after the content is loaded */
+        body.loaded #preloader {
+            display: none;
         }
     </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="img/favicon.png" alt="Loading...">
+    </div>
+
+    <script>
+        // Add a dynamic timeout for hiding the preloader
+        window.addEventListener("load", function () {
+            const minLoadTime = 3000; // Minimum load time in milliseconds
+            setTimeout(function () {
+                document.body.classList.add('loaded');
+            }, minLoadTime); // Always wait at least 2 seconds
+        });
+    </script>
+
+    <nav class="slim-nav-brand">
+    </nav>
+
 
     <!-- Nav Bar -->
     <nav>
-        <div class="nav-brand">SSanga Accountants</div>
+        <div class="nav-brand"><img src="img/SSANGA_LOGO.png" width="150"></div>
         <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
             <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links">
             <a href="https://ssangaaccountants.co.za">Home</a>
-            <a href="#">About</a>
+            <a href="#" style="color: black;">About</a>
             <a href="https://ssangaaccountants.co.za/#services">Services</a>
             <a href="https://ssangaaccountants.co.za/#benefits">Why Us</a>
             <a href="https://ssangaaccountants.co.za/#testimonials">Testimonials</a>
@@ -241,13 +338,14 @@
     </nav>
 
     <!-- Page Header -->
-    <header>
+    <header style="
+            background:#2e7d32">
         <h1>About Us</h1>
     </header>
 
     <!-- About Content -->
     <section>
-        <h2>Who We Are</h2>
+        <h2 style="color: #1b5e20;">Who We Are</h2>
         <p>
             SSanga Accountants is a professional accounting and compliance firm based in South Africa, dedicated to
             empowering businesses through financial clarity and regulatory compliance. Our team brings a wealth of
@@ -260,37 +358,43 @@
             integrity, and consistent delivery of quality service.
         </p>
 
-        <h2>What We Do</h2>
+        <h2 style="color: #1b5e20;">What We Do</h2>
         <p>
             Our services range from day-to-day bookkeeping and payroll processing to comprehensive tax planning, company
             registrations, and statutory compliance. We use modern tools and technologies to ensure that our clients
             always have a clear view of their financial position.
         </p>
 
-        <h2>Our Vision</h2>
+        <h2 style="color: #1b5e20;">Our Vision</h2>
         <p>
             To become the most trusted name in accounting and compliance for SMEs in Africa by offering personalized,
             results-driven services that empower business growth.
         </p>
 
-        <h2>Our Mission</h2>
+        <h2 style="color: #1b5e20;">Our Mission</h2>
         <p>
             To help businesses succeed by taking the stress out of financial management, ensuring compliance, and
             providing expert support when it's needed most.
         </p>
 
+        <h2 style="color: #1b5e20;">Meet The Team</h2>
+
         <!-- CEO Section -->
         <div class="ceo-section">
             <div class="ceo-image">
-                <img src="img/CEO.jpg" alt="Samuel Sanga - CEO of SSanga Accountants" />
+                <img src="img/CEO.png" alt="Dr Masanga - CEO of SSanga Accountants" />
             </div>
             <div class="ceo-bio">
-                <h2>Meet Our CEO</h2>
+                <h2 style="color: #1b5e20;">Dr. Masanga Hamza</h2>
+                <h4></h4>
+                <h4 style="color: black;">Founder and Chief Executive Officer</h4>
                 <p>
-                    <strong>Dr. Masanga Hamza (MUFI-SAAB) Owenjovu</strong>, the founder and Chief Executive Officer of
+                    <strong style="color: #1b5e20;">Dr. Masanga Hamza (MUFI-SAAB) Owenjovu</strong>, the founder and
+                    Chief Executive Officer of
                     SSanga Accountants, brings
                     over 15 years of industry experience. With a deep understanding of the local regulatory environment
-                    and a passion for supporting entrepreneurship, Samuel has led the firm to become a reliable partner
+                    and a passion for supporting entrepreneurship, Dr Masanga has led the firm to become a reliable
+                    partner
                     to clients across the country.
                 </p>
                 <p>
@@ -300,10 +404,38 @@
                 </p>
             </div>
         </div>
+
+        <!-- CEO Section -->
+        <div class="ceo-section">
+            <div class="ceo-image">
+                <img src="img/NAGUJIA.png"
+                    alt="Nagujia Sumaya - Risk & Internal Audit Specialist of SSanga Accountants" />
+            </div>
+            <div class="ceo-bio">
+                <h2 style="color: #1b5e20;">Nagujia Sumaya</h2>
+                <h4 style="color: black;">Risk & Internal Audit Specialist</h4>
+                <p>With a
+                    <strong style="color: #1b5e20;">Bachelor of Commerce in Internal Auditing</strong> and an <strong
+                        style="color: #1b5e20;">Honours degree in Risk Management</strong>,
+                    Nagujia Sumaya brings both academic excellence and hands-on expertise to our team. Her professional
+                    background includes experience in a wide range of accounting services, making her a valuable asset
+                    to clients seeking precision, compliance, and strategic financial insight.
+                </p>
+                <p>
+                    Sumaya is passionate about identifying potential risks and helping businesses strengthen their
+                    internal controls and financial practices. Her analytical mindset and attention to detail ensure
+                    that every audit is thorough and tailored to the client’s operational needs.
+                </p>
+            </div>
+        </div>
+
     </section>
     <footer>
-        <p>&copy; 2025 SSanga Accountants. All rights reserved. Powered by <a class="semtex"
-                href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency</a></p>
+        <div class="nav-brand"><img src="img/SSANGA_LOGO FOR FOOTER.png" width="150"></div>
+        <p class="footer2">&copy; 2025 SSanga Accountants. All rights reserved.<br>A licensed Controlling Company of the Designated
+            Mother Group.<br>Registration number
+            2013/073718/07. Tax Numbers IT-9431277178 <br>Entities in the group are Licensed.<br>Powered by <a
+                class="semtex" href="https://www.semtexagency.co.za/" target="_blank">Semtex Agency.</a></p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
