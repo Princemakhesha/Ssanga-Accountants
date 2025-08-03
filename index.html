@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -656,6 +657,16 @@
         };
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VM0L53LED1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VM0L53LED1');
+    </script>
+
 </head>
 
 <body>
@@ -680,13 +691,14 @@
 
 
     <nav>
-        <div class="nav-brand"><a href="https://ssangaaccountants.co.za"><img src="img/SSANGA_LOGO.png" width="150"></a></div>
+        <div class="nav-brand"><a href="https://ssangaaccountants.co.za"><img src="img/SSANGA_LOGO.png" width="150"></a>
+        </div>
         <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
             <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links">
             <a href="https://ssangaaccountants.co.za">Home</a>
-            <a href="https://ssangaaccountants.co.za/#About">About</a>
+            <a href="https://ssangaaccountants.co.za/About">About</a>
             <a href="https://ssangaaccountants.co.za/#services">Services</a>
             <a href="https://ssangaaccountants.co.za/#benefits">Why Us</a>
             <a href="https://ssangaaccountants.co.za/#testimonials">Testimonials</a>
@@ -1076,6 +1088,7 @@
                 <input type="email" name="Email" placeholder="Your Email" required />
                 <textarea rows="5" name="Message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
+
             </form>
         </div>
     </section>
@@ -1183,6 +1196,85 @@
             });
         });
     </script>
+
+    <!-- Cookie Notice -->
+    <style>
+        #cookie-notice {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #2c2c2c;
+            color: white;
+            padding: 15px;
+            z-index: 9999;
+            font-size: 14px;
+            display: none;
+        }
+
+        .cookie-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cookie-text {
+            flex: 1 1 70%;
+            margin: 0;
+        }
+
+        .cookie-button {
+            background-color: #1b5e20;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        /* Stack content vertically on small screens */
+        @media (max-width: 600px) {
+            .cookie-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cookie-button {
+                align-self: flex-end;
+            }
+        }
+    </style>
+
+    <div id="cookie-notice">
+        <div class="cookie-container">
+            <p class="cookie-text">
+                We use cookies to enhance your experience and analyze site traffic using Google Analytics.
+                By continuing to use our site, you consent to our use of cookies.
+                Read our <a href="https://ssangaaccountants.co.za/privacy"
+                    style="color: #1b5e20; text-decoration: underline;">Privacy Policy</a>.
+            </p>
+            <button class="cookie-button" id="accept-cookies">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                document.getElementById("cookie-notice").style.display = "block";
+            }
+
+            document.getElementById("accept-cookies").addEventListener("click", function () {
+                localStorage.setItem("cookiesAccepted", "true");
+                document.getElementById("cookie-notice").style.display = "none";
+            });
+        });
+    </script>
+
 
 </body>
 
